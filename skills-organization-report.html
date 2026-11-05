@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills 库整理报告</title>
+<style>
+  :root{
+    --bg:#F7F6F3; --card:#FFFFFF; --ink:#33322E; --ink2:#6B6960; --ink3:#96938A;
+    --line:#E6E3DC; --line2:#F0EDE7;
+    --green:#7D9B84; --brown:#B0907A; --purple:#9089A8; --blue:#7E93A8; --clay:#C08E7E;
+    --green-bg:#EDF2EE; --brown-bg:#F5EFE9; --purple-bg:#F0EEF4; --blue-bg:#EDF1F4; --clay-bg:#F7EEEA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; font-size:14px; padding:44px 28px 80px;
+  }
+  .wrap{max-width:1040px;margin:0 auto}
+
+  header{margin-bottom:38px}
+  .eyebrow{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px}
+  h1{font-size:29px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
+  .sub{color:var(--ink2);font-size:13.5px}
+
+  /* 概览数字 */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 40px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 20px 18px;position:relative;overflow:hidden}
+  .stat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green)}
+  .stat:nth-child(2)::before{background:var(--purple)}
+  .stat:nth-child(3)::before{background:var(--brown)}
+  .stat:nth-child(4)::before{background:var(--blue)}
+  .stat .n{font-size:32px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+  .stat .l{font-size:12px;color:var(--ink2);margin-top:6px}
+  .stat .d{font-size:11.5px;color:var(--ink3);margin-top:2px}
+
+  h2{font-size:16px;font-weight:600;margin:44px 0 6px;display:flex;align-items:center;gap:10px}
+  h2 .idx{font-size:11px;color:var(--ink3);font-weight:500;letter-spacing:.1em;font-variant-numeric:tabular-nums}
+  .h2sub{color:var(--ink2);font-size:13px;margin-bottom:18px}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  thead th{
+    text-align:left;padding:12px 16px;font-weight:500;font-size:11.5px;
+    letter-spacing:.06em;color:var(--ink3);background:#FBFAF8;
+    border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+  tbody td{padding:13px 16px;border-bottom:1px solid var(--line2);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#FCFBF9}
+  code{font-family:"SF Mono",Consolas,"Liberation Mono",monospace;font-size:12px;color:var(--ink)}
+  .repo{font-family:"SF Mono",Consolas,monospace;font-size:12.5px;font-weight:500}
+  .muted{color:var(--ink2);font-size:12.5px}
+  .num{font-variant-numeric:tabular-nums;color:var(--ink2);white-space:nowrap}
+
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11.5px;line-height:1.6;white-space:nowrap}
+  .p-git{background:var(--green-bg);color:#5C7A63}
+  .p-keep{background:var(--brown-bg);color:#8E6E5A}
+  .p-code{background:var(--purple-bg);color:#6E6789}
+  .p-done{background:var(--green-bg);color:#5C7A63}
+  .p-wait{background:var(--clay-bg);color:#9C6B58}
+
+  /* 技能网格 */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+  .grp{padding:20px 22px;border-bottom:1px solid var(--line2)}
+  .grp:nth-child(odd){border-right:1px solid var(--line2)}
+  .grp:nth-last-child(-n+2){border-bottom:none}
+  .grp h3{font-size:12.5px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+  .grp .gh{font-size:11.5px;color:var(--ink3);margin-bottom:12px;font-family:"SF Mono",Consolas,monospace}
+  .items{display:flex;flex-wrap:wrap;gap:6px}
+  .item{
+    font-size:11.5px;padding:3px 9px;border-radius:6px;
+    background:#FAF9F6;border:1px solid var(--line);color:var(--ink2);
+  }
+  .item.g{background:var(--green-bg);border-color:#DCE6DE;color:#5C7A63}
+
+  /* 问题块 */
+  .issue{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-top:14px}
+  .issue h3{font-size:13.5px;font-weight:600;margin-bottom:10px;color:var(--clay)}
+  .issue p{color:var(--ink2);font-size:13px;margin-bottom:10px}
+  .issue p:last-child{margin-bottom:0}
+  .issue strong{color:var(--ink);font-weight:600}
+  .flow{display:flex;align-items:stretch;gap:0;margin:16px 0 4px;flex-wrap:wrap}
+  .step{
+    flex:1;min-width:150px;background:#FAF9F6;border:1px solid var(--line);
+    border-radius:8px;padding:12px 14px;font-size:12px;color:var(--ink2);position:relative;
+  }
+  .step b{display:block;color:var(--ink);font-size:12.5px;margin-bottom:3px;font-weight:600}
+  .step .tag{font-size:10.5px;letter-spacing:.06em;color:var(--ink3)}
+  .arrow{display:flex;align-items:center;padding:0 8px;color:var(--ink3);font-size:14px}
+
+  ul.notes{list-style:none;margin-top:6px}
+  ul.notes li{padding-left:18px;position:relative;color:var(--ink2);font-size:13px;margin-bottom:8px}
+  ul.notes li::before{content:'';position:absolute;left:4px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--green)}
+
+  footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink3);font-size:11.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  @media(max-width:760px){
+    body{padding:28px 16px 60px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr}
+    .grp:nth-child(odd){border-right:none}
+    .grp{border-bottom:1px solid var(--line2)!important}
+    .flow{flex-direction:column}
+    .arrow{transform:rotate(90deg);padding:4px 0;justify-content:center}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Skills Manager · 整理报告</div>
+    <h1>Skills 库整理与统一管理</h1>
+    <div class="sub">从 GitHub 开源仓库重新安装可溯源的技能，建立编码能力 preset，并统一部署到 WorkBuddy</div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="n">43</div><div class="l">库内技能总数</div><div class="d">全部归入 preset</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">preset 分组</div><div class="d">coding / docs / writing / diagram</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">标签（原 32 个）</div><div class="d">收敛到主分类</div></div>
+    <div class="stat"><div class="n">43/43</div><div class="l">WorkBuddy 已部署</div><div class="d">四个 preset 全部 active</div></div>
+  </div>
+
+  <h2><span class="idx">01</span>上游来源</h2>
+  <div class="h2sub">逐个用 <code>gh api</code> 核实仓库存在性与许可证，全部为 MIT 或同类宽松许可</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>GitHub 仓库</th><th>技能数</th><th>覆盖技能</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="repo">obra/superpowers</td>
+          <td class="num">14</td>
+          <td class="muted">brainstorming、writing-plans、test-driven-development、systematic-debugging、using-git-worktrees、subagent-driven-development、requesting/receiving-code-review、dispatching-parallel-agents、executing-plans、verification-before-completion、finishing-a-development-branch、using-superpowers、writing-skills</td>
+        </tr>
+        <tr>
+          <td class="repo">dietrichgebert/ponytail</td>
+          <td class="num">6</td>
+          <td class="muted">ponytail、-audit、-debt、-gain、-help、-review</td>
+        </tr>
+        <tr>
+          <td class="repo">mattpocock/skills</td>
+          <td class="num">1</td>
+          <td class="muted">grill-me（位于 skills/productivity/）</td>
+        </tr>
+        <tr>
+          <td class="repo">vercel-labs/skills</td>
+          <td class="num">1</td>
+          <td class="muted">find-skills</td>
+        </tr>
+        <tr>
+          <td class="repo">anthropics/skills</td>
+          <td class="num">1</td>
+          <td class="muted">skill-creator</td>
+        </tr>
+        <tr>
+          <td class="repo">tt-a1i/archify</td>
+          <td class="num">1</td>
+          <td class="muted">archify</td>
+        </tr>
+        <tr>
+          <td class="repo">alchaincyf/darwin-skill</td>
+          <td class="num">1</td>
+          <td class="muted">darwin-skill（SKILL.md 在仓库根目录，分支为 master）</td>
+        </tr>
+        <tr>
+          <td class="repo">alchaincyf/nuwa-skill</td>
+          <td class="num">1</td>
+          <td class="muted">huashu-nuwa（根目录）— 换源重试中</td>
+        </tr>
+        <tr>
+          <td class="repo">MiniMax-AI/skills</td>
+          <td class="num">1</td>
+          <td class="muted">minimax-docx（位于 skills/minimax-docx）— 换源重试中</td>
+        </tr>
+        <tr>
+          <td class="repo">xingkongliang/skills-manager</td>
+          <td class="num">1</td>
+          <td class="muted">manage-skills（管理工具自带）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span class="idx">02</span>保留原样的技能</h2>
+  <div class="h2sub">没有 GitHub 上游，不重装，只按用途归入对应 preset</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>类别</th><th>数量</th><th>技能</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="pill p-keep">自建</span></td>
+          <td class="num">11</td>
+          <td class="muted">apipost-test-report、cn-docx-finalize、code-simplifier、deployment-plan-review、drawio-annotate、install-skill-from-github、jiajing-emperor-perspective、pozhenzil-perspective、tech-proposal-generator、tech-proposal-review、markitdown-skill</td>
+        </tr>
+        <tr>
+          <td><span class="pill p-keep">技能市场</span></td>
+          <td class="num">4</td>
+          <td class="muted">weekly-report、superpowers、superpowers-overview、superpowers-verification（OpenClaw 版，带 _skillhub_meta.json）</td>
+        </tr>
+        <tr>
+          <td><span class="pill p-wait">换源中</span></td>
+          <td class="num">2</td>
+          <td class="muted">huashu-nuwa、minimax-docx</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span class="idx">03</span>四个 preset</h2>
+  <div class="h2sub">43 个技能全部归入，无重叠、无遗漏；四个 preset 均已部署到 WorkBuddy 且状态为 active</div>
+
+  <div class="card">
+    <table>
+      <thead><tr><th>Preset</th><th>ID</th><th>技能</th><th>包含技能</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>coding</strong><div class="muted" style="font-size:11.5px">编码能力</div></td>
+          <td class="repo">fec65117</td>
+          <td class="num">30</td>
+          <td class="muted">
+            <b>superpowers 方法论 14</b>　brainstorming、writing-plans、executing-plans、test-driven-development、systematic-debugging、subagent-driven-development、dispatching-parallel-agents、using-git-worktrees、requesting-code-review、receiving-code-review、verification-before-completion、finishing-a-development-branch、using-superpowers、writing-skills<br>
+            <b>ponytail 6</b>　ponytail、-review、-audit、-debt、-gain、-help<br>
+            <b>其他 10</b>　code-simplifier、grill-me、skill-creator、find-skills、darwin-skill、install-skill-from-github、manage-skills、superpowers、superpowers-overview、superpowers-verification
+          </td>
+        </tr>
+        <tr>
+          <td><strong>docs</strong><div class="muted" style="font-size:11.5px">文档产出</div></td>
+          <td class="repo">d2a16367</td>
+          <td class="num">7</td>
+          <td class="muted">tech-proposal-generator、tech-proposal-review、cn-docx-finalize、minimax-docx、markitdown-skill、apipost-test-report、deployment-plan-review</td>
+        </tr>
+        <tr>
+          <td><strong>writing</strong><div class="muted" style="font-size:11.5px">写作</div></td>
+          <td class="repo">f014ae0c</td>
+          <td class="num">4</td>
+          <td class="muted">weekly-report、jiajing-emperor-perspective、pozhenzil-perspective、huashu-nuwa</td>
+        </tr>
+        <tr>
+          <td><strong>diagram</strong><div class="muted" style="font-size:11.5px">图表</div></td>
+          <td class="repo">afe6ca9b</td>
+          <td class="num">2</td>
+          <td class="muted">archify、drawio-annotate</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span class="idx">04</span>关键问题：符号链接静默失败</h2>
+  <div class="h2sub">这是本次唯一的技术障碍，也是之前部署看似成功、实际全是空目录的原因</div>
+
+  <div class="issue">
+    <h3>根因</h3>
+    <p>CLI 默认用 <strong>symlink</strong> 模式部署。当前账户<strong>非管理员且未开启开发者模式</strong>，Windows 会拦截符号链接创建 —— 但拦截方式是静默降级，留下一个空目录，而 CLI 仍记录 <code>mode: symlink, status: ok</code>。命令行 <code>ln -s</code> 和 PowerShell <code>New-Item -ItemType SymbolicLink</code> 复现同样结果。</p>
+    <p><strong>Junction 不受此限制</strong>，无需管理员权限。桌面版 Skills Manager 正是用 Junction，所以它管理的技能一直正常。</p>
+  </div>
+
+  <div class="issue">
+    <h3>处理过程</h3>
+    <div class="flow">
+      <div class="step"><span class="tag">STEP 1</span><b>发现异常</b>部署报 24/24 成功，抽查目录全为空</div>
+      <div class="arrow">→</div>
+      <div class="step"><span class="tag">STEP 2</span><b>定位根因</b>dir /AL 确认 0 个重解析点，全是普通空目录</div>
+      <div class="arrow">→</div>
+      <div class="step"><span class="tag">STEP 3</span><b>验证替代</b>Junction 创建成功且内容可读，CLI 也认可</div>
+      <div class="arrow">→</div>
+      <div class="step"><span class="tag">STEP 4</span><b>重建</b>清空目录 + Junction 重建 27 个，再 deploy 补齐</div>
+    </div>
+    <p style="margin-top:14px">最终 <strong>43/43</strong> 全部为 Junction 链接，抽查 <code>SKILL.md</code> 均可正常读取。后续 CLI 的 <code>update</code> 会直接作用于中央库，所有 agent 同步生效。docs / writing / diagram 三组在整理时又遇到过两次同样的空目录，均用 Junction 手工修好。</p>
+  </div>
+
+  <h2><span class="idx">05</span>标签收敛：32 → 6</h2>
+  <div class="h2sub">原来的 32 个标签里有大量来源标记和细碎修饰词（superpowers、ponytail、docx、review、methodology、中文公文…），现在只保留 6 个主分类，归属关系主要交给 preset 表达</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>标签</th><th>含义</th><th>数量</th></tr></thead>
+      <tbody>
+        <tr><td><code>coding</code></td><td class="muted">编码类，对应 coding preset</td><td class="num">30</td></tr>
+        <tr><td><code>docs</code></td><td class="muted">文档产出</td><td class="num">7</td></tr>
+        <tr><td><code>writing</code></td><td class="muted">写作</td><td class="num">4</td></tr>
+        <tr><td><code>diagram</code></td><td class="muted">图表</td><td class="num">2</td></tr>
+        <tr><td><code>skill-engineering</code></td><td class="muted">技能创建 / 发现 / 优化（与 coding 交叉）</td><td class="num">5</td></tr>
+        <tr><td><code>persona</code></td><td class="muted">人物视角与文风（与 writing 交叉）</td><td class="num">3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span class="idx">06</span>备份与回滚</h2>
+  <div class="card" style="padding:22px 24px">
+    <ul class="notes">
+      <li>整理前完整备份：<code>~/.skills-manager/backups/20261023-pre-organize/</code>（数据库 <code>skills-manager.db</code> + 元数据）</li>
+      <li>5 个重复技能目录备份：同上 <code>dup-skills/</code>（dispatching-parallel-agents-2、executing-plans-2、receiving-code-review-2、using-superpowers-2、writing-skills-2）</li>
+      <li>darwin-skill 市场版备份：<code>~/.skills-manager/backups/20261024-darwin-skill-workbuddy-orig/</code></li>
+      <li>回滚方式：停止桌面应用 → 用备份覆盖 <code>skills-manager.db</code> 与 <code>skills/.skills-manager/</code> → 重启</li>
+    </ul>
+  </div>
+
+  <h2><span class="idx">07</span>后续维护</h2>
+  <div class="card" style="padding:22px 24px">
+    <ul class="notes">
+      <li>更新上游：<code>skills-manager-cli skills check --all</code> 看差异，<code>skills update &lt;name&gt;</code> 拉新版</li>
+      <li>新增技能到 preset：<code>presets add-skill coding &lt;skill-id&gt;</code>，然后 <code>presets deploy coding --agent workbuddy</code></li>
+      <li>扩展部署目标：<code>presets deploy coding --agent claude_code</code>（当前仅 workbuddy 为 active）</li>
+      <li>注意：本机符号链接不可用，<strong>新增部署需手工建 Junction</strong>，否则又会得到空目录</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Skills Manager CLI v1.43.0 · 库路径 ~/.skills-manager</span>
+    <span>2026-10-25</span>
+  </footer>
+
+</div>
+</body>
+</html>

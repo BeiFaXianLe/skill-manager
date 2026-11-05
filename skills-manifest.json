@@ -1,0 +1,544 @@
+{
+  "generated_at": "2026-11-05",
+  "total_skills": 47,
+  "github_skills": 33,
+  "repos": [
+    {
+      "repo": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 312756,
+      "skills": [
+        {
+          "name": "brainstorming",
+          "subpath": "skills/brainstorming",
+          "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+          "presets": [
+            "coding"
+          ],
+          "description": "任何创造性工作开始前必用：做新功能、搭组件、加能力、改行为，或规划任何新东西（软件内外，如演讲、生意、装修）。先发散澄清要做什么、不做什么，再动手写代码。Keywords: brainstorming, creative work, feature planning, 头脑风暴, 需求澄清"
+        },
+        {
+          "name": "dispatching-parallel-agents",
+          "subpath": "skills/dispatching-parallel-agents",
+          "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+          "presets": [
+            "coding"
+          ],
+          "description": "面对 2 个以上互不依赖、无共享状态、无先后顺序的任务时使用：并行分派多个子代理同时推进，而不是串行排队。Keywords: parallel agents, independent tasks, 并行, 子代理"
+        },
+        {
+          "name": "executing-plans",
+          "subpath": "skills/executing-plans",
+          "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+          "presets": [
+            "docs",
+            "coding"
+          ],
+          "description": "在当前会话里由你自己充当实施者落地一份计划（用户选择就地执行，或没有子代理工具可用时）。按计划逐项执行并同步进度。Keywords: executing plans, inline execution, 执行计划, 就地实施"
+        },
+        {
+          "name": "finishing-a-development-branch",
+          "subpath": "skills/finishing-a-development-branch",
+          "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+          "presets": [
+            "coding"
+          ],
+          "description": "实现完成、测试全绿之后使用：决定这块工作怎么合入——直接合并、开 PR，还是清理分支收尾。Keywords: finish branch, merge, PR, 分支收尾"
+        },
+        {
+          "name": "receiving-code-review",
+          "subpath": "skills/receiving-code-review",
+          "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+          "presets": [
+            "coding"
+          ],
+          "description": "收到代码评审意见、准备照做之前使用；尤其当意见含糊或技术上存疑时——要求技术较真与动手验证，而不是表面认同、盲目实现。Keywords: receiving review, feedback, verify, 评审意见, 技术较真"
+        },
+        {
+          "name": "requesting-code-review",
+          "subpath": "skills/requesting-code-review",
+          "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+          "presets": [
+            "coding"
+          ],
+          "description": "完成任务、实现重大功能或合并前使用：主动请求评审，确认工作确实满足需求。Keywords: request review, before merge, 请求评审, 合并前检查"
+        },
+        {
+          "name": "subagent-driven-development",
+          "subpath": "skills/subagent-driven-development",
+          "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+          "presets": [
+            "coding"
+          ],
+          "description": "在当前会话中用子代理并行执行实施计划里的独立任务：拆分任务、分派、回收结果。Keywords: subagent, parallel execution, 子代理开发, 任务分派"
+        },
+        {
+          "name": "systematic-debugging",
+          "subpath": "skills/systematic-debugging",
+          "revision": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+          "presets": [
+            "coding"
+          ],
+          "description": "遇到 bug、测试失败或任何异常行为时，在提出修复方案之前使用：先系统化定位根因，再谈怎么修。Keywords: debugging, root cause, 调试, 根因分析"
+        },
+        {
+          "name": "test-driven-development",
+          "subpath": "skills/test-driven-development",
+          "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+          "presets": [
+            "coding"
+          ],
+          "description": "实现任何功能或修 bug 时，在写实现代码之前使用：先写测试再写实现，用测试驱动设计。Keywords: TDD, test-first, 测试驱动, 先写测试"
+        },
+        {
+          "name": "using-git-worktrees",
+          "subpath": "skills/using-git-worktrees",
+          "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+          "presets": [
+            "coding"
+          ],
+          "description": "开始需要与当前工作区隔离的功能开发、或执行实施计划之前使用：确保有独立工作区（优先原生工具，git worktree 兜底），不污染主分支现场。Keywords: git worktree, isolation, 隔离工作区, 分支隔离"
+        },
+        {
+          "name": "using-superpowers",
+          "subpath": "skills/using-superpowers",
+          "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+          "presets": [
+            "coding"
+          ],
+          "description": "每次对话开始即适用：确立如何查找与使用技能——要求在任何回复（包括澄清提问）之前先调用相关技能。Keywords: using superpowers, skill discovery, 技能调用, 对话开头"
+        },
+        {
+          "name": "verification-before-completion",
+          "subpath": "skills/verification-before-completion",
+          "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+          "presets": [
+            "coding"
+          ],
+          "description": "在声称工作完成 / 修好 / 通过之前，以及提交或创建 PR 之前使用：必须跑验证命令并确认输出，再下成功结论。先有证据，再做断言。Keywords: verification, before completion, 验证, 提交前检查"
+        },
+        {
+          "name": "writing-plans",
+          "subpath": "skills/writing-plans",
+          "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+          "presets": [
+            "coding"
+          ],
+          "description": "拿到多步任务的规格或需求之后、动代码之前使用：先写出可执行的实施计划（步骤、验证点、风险）。Keywords: writing plans, spec, 实施计划, 任务拆解"
+        },
+        {
+          "name": "writing-skills",
+          "subpath": "skills/writing-skills",
+          "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+          "presets": [
+            "coding"
+          ],
+          "description": "创建新技能、编辑现有技能、或在部署前验证技能是否真正可用时使用。Keywords: writing skills, authoring, 技能编写, 部署前验证"
+        }
+      ]
+    },
+    {
+      "repo": "DietrichGebert/ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 184916,
+      "skills": [
+        {
+          "name": "ponytail",
+          "subpath": "skills/ponytail",
+          "revision": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
+          "presets": [
+            "coding"
+          ],
+          "description": "偷懒型资深工程师模式：用最小改动完整解决问题，回复一次读完就懂。适用于任何编码任务 （写代码、修 bug、重构、审查、选依赖），也适用于用户说「ponytail」「偷懒」「最简方案」 「yagni」或抱怨过度设计时。档位：lite / full（默认）/ ultra。 Keywords: ponytail, be lazy, simplest solution, yagni, over-engineering, bloat.\n"
+        },
+        {
+          "name": "ponytail-audit",
+          "subpath": "skills/ponytail-audit",
+          "revision": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
+          "presets": [
+            "coding"
+          ],
+          "description": "整仓质量审计：bug、安全漏洞、真实负载下的崩溃点、无测试覆盖的高风险代码、性能慢路径，以及哪些该删、该合并、该拆分。按严重度排序，每条用大白话解释。一次性出报告，不改代码。Keywords: audit, codebase review, find bloat, 代码审计, 整仓体检"
+        },
+        {
+          "name": "ponytail-debt",
+          "subpath": "skills/ponytail-debt",
+          "revision": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
+          "presets": [
+            "coding"
+          ],
+          "description": "把所有 shortcut: 注释（以及更早的 ponytail: 注释）列成技术债台账，看清哪些地方当初被简化过。一次性出报告，不改代码。Keywords: tech debt, shortcut ledger, 技术债, 债务清单"
+        },
+        {
+          "name": "ponytail-gain",
+          "subpath": "skills/ponytail-gain",
+          "revision": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
+          "presets": [
+            "coding"
+          ],
+          "description": "展示 ponytail 在基准测试中的实测收益：省下的代码量、成本与耗时。一次性展示。Keywords: ponytail gain, savings, benchmark, 收益, 省了多少"
+        },
+        {
+          "name": "ponytail-help",
+          "subpath": "skills/ponytail-help",
+          "revision": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
+          "presets": [
+            "coding"
+          ],
+          "description": "ponytail 的档位、技能与命令速查表，一次看完怎么用。Keywords: ponytail help, quick reference, 速查, 使用说明"
+        },
+        {
+          "name": "ponytail-review",
+          "subpath": "skills/ponytail-review",
+          "revision": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
+          "presets": [
+            "coding"
+          ],
+          "description": "对一次改动做质量评审：逻辑对不对、安不安全、真实负载下扛不扛得住、高风险代码有没有测试、够不够快、每行是否都必要。会读关联代码而不只看 diff，每条用大白话解释。Keywords: code review, review this, over-engineered, 代码评审, 过度设计"
+        }
+      ]
+    },
+    {
+      "repo": "wshobson/agents",
+      "url": "https://github.com/wshobson/agents",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 42229,
+      "skills": [
+        {
+          "name": "e2e-testing-patterns",
+          "subpath": "plugins/developer-essentials/skills/e2e-testing-patterns",
+          "revision": "7e2fb559cf4b824b27f1fec49fe88f7511066d26",
+          "presets": [],
+          "description": "用 Playwright / Cypress 做端到端测试：搭建可靠的 E2E 测试套件、修掉不稳定的 flaky 用例、建立团队测试标准，让部署更有底气。Keywords: e2e, end-to-end testing, Playwright, Cypress, 端到端, 不稳定用例"
+        },
+        {
+          "name": "fastapi-templates",
+          "subpath": "plugins/api-scaffolding/skills/fastapi-templates",
+          "revision": "7e2fb559cf4b824b27f1fec49fe88f7511066d26",
+          "presets": [],
+          "description": "从零搭可上生产的 FastAPI 项目：异步模式、依赖注入、完善的错误处理与项目骨架，适合新建后端 API 工程。Keywords: FastAPI templates, async, error handling, 脚手架"
+        },
+        {
+          "name": "python-design-patterns",
+          "subpath": "plugins/python-development/skills/python-design-patterns",
+          "revision": "7e2fb559cf4b824b27f1fec49fe88f7511066d26",
+          "presets": [],
+          "description": "Python 设计模式与原则：KISS、关注点分离、单一职责、组合优于继承。适合这些场景：从零设计服务/组件并划分职责；重构过大的 God class 或巨型函数；判断该新增抽象还是接受重复；评审 PR 里的紧耦合、内部类型泄漏；在继承与组合之间取舍；I/O 与业务逻辑纠缠导致难以测试。Keywords: design patterns, refactoring, KISS, composition, 重构, 设计原则"
+        },
+        {
+          "name": "python-testing-patterns",
+          "subpath": "plugins/python-development/skills/python-testing-patterns",
+          "revision": "7e2fb559cf4b824b27f1fec49fe88f7511066d26",
+          "presets": [],
+          "description": "用 pytest 落地完整测试策略：fixture 组织、mock 打桩、测试驱动开发与最佳实践。适合写 Python 测试、搭测试套件、推行测试规范。Keywords: pytest, fixtures, mocking, TDD, Python 测试"
+        }
+      ]
+    },
+    {
+      "repo": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "branch": "main",
+      "license": "无 LICENSE 文件",
+      "stars": 187611,
+      "skills": [
+        {
+          "name": "frontend-design",
+          "subpath": "skills/frontend-design",
+          "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+          "presets": [
+            "coding"
+          ],
+          "description": "新建或改造 UI 时给出有辨识度的视觉设计指导：审美方向、字体与排版、配色取舍，避免一眼看去就是模板默认样式。Keywords: frontend design, typography, visual design, UI 设计, 视觉风格"
+        },
+        {
+          "name": "skill-creator",
+          "subpath": "skills/skill-creator",
+          "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+          "presets": [
+            "coding"
+          ],
+          "description": "创建新技能、改进现有技能、度量技能效果：从零编写技能；编辑优化已有技能；跑 eval 做效果测试；做带方差分析的性能基准；优化 description 以提升触发准确率。Keywords: skill creator, skill authoring, eval, benchmark, 技能创建, 技能优化"
+        }
+      ]
+    },
+    {
+      "repo": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 314286,
+      "skills": [
+        {
+          "name": "grill-me",
+          "subpath": "skills/productivity/grill-me",
+          "revision": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d",
+          "presets": [
+            "coding"
+          ],
+          "description": "用一轮不留情面的连环追问，把方案或设计问到站得住脚：逼出隐藏假设、边界情况和没想清的地方。Keywords: grill me, interview, plan review, 追问, 方案打磨"
+        }
+      ]
+    },
+    {
+      "repo": "MiniMax-AI/skills",
+      "url": "https://github.com/MiniMax-AI/skills",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 13790,
+      "skills": [
+        {
+          "name": "minimax-docx",
+          "subpath": "skills/minimax-docx",
+          "revision": "60aaae52bb2af8162732751a4332f62a5fef518b",
+          "presets": [
+            "docs"
+          ],
+          "description": "用 OpenXML SDK（.NET）专业地创建、编辑、排版 DOCX。三条流水线：A 从零新建文档；B 填充/修改现有文档内容；C 套用模板排版并通过 XSD 校验关卡。只要最终产物是 .docx（写报告、写方案、拟合同、填表单、按模板重排）就该用；即使用户没提 docx，只要是可打印的正式文档也适用。Keywords: docx, Word, OpenXML, template, 文档排版"
+        }
+      ]
+    },
+    {
+      "repo": "currents-dev/playwright-best-practices-skill",
+      "url": "https://github.com/currents-dev/playwright-best-practices-skill",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 419,
+      "skills": [
+        {
+          "name": "playwright-best-practices",
+          "subpath": "playwright-best-practices",
+          "revision": "283d5cbc5d11aac1abda058b16ad22c317d54dc0",
+          "presets": [
+            "coding"
+          ],
+          "description": "Playwright 测试最佳实践大全：写测试、修 flaky、调试失败、Page Object Model、CI/CD 配置、性能优化、API mock、登录鉴权 / OAuth、无障碍检测（axe-core）、上传下载、时间 mock、WebSocket、多标签页与弹窗、移动端响应式、触屏手势、GraphQL、错误处理、离线模式、多人协作、三方服务（支付/邮箱验证）、控制台报错监控、全局 setup/teardown、测试标注与标签（@smoke / @fast / @critical）、安全测试（XSS / CSRF）、Web Vitals、iframe、组件测试、canvas / WebGL、Service Worker / PWA、覆盖率、i18n、Electron 与浏览器扩展测试。Keywords: Playwright, testing, flaky, POM, accessibility, E2E"
+        }
+      ]
+    },
+    {
+      "repo": "fastapi/fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "branch": "master",
+      "license": "MIT",
+      "stars": 104426,
+      "skills": [
+        {
+          "name": "fastapi",
+          "subpath": "fastapi/.agents/skills/fastapi",
+          "revision": "5cb6272ed7e3e07eaf6978e1e65b94aca76fa8e0",
+          "presets": [],
+          "description": "FastAPI 最佳实践与约定：路由与 API 设计、Pydantic 模型、依赖注入、流式响应（含 SSE）、托管前端应用，让代码保持现代写法。Keywords: FastAPI, Pydantic, dependency injection, SSE, 最佳实践"
+        }
+      ]
+    },
+    {
+      "repo": "QingYunA/answer-me-with-html",
+      "url": "https://github.com/QingYunA/answer-me-with-html",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 5329,
+      "skills": [
+        {
+          "name": "answer-me-with-html",
+          "subpath": "skills/answer-me-with-html",
+          "revision": "2d39c33482ecde9c6aa1b20e36d8af01f4da8565",
+          "presets": [
+            "人物角色"
+          ],
+          "description": "Turns an answer into a one-page visual HTML explainer: the model writes a short Markdown draft and the bundled CLI builds one page. Use it proactively and liberally in replies to the user, without being asked, whenever a page would help the reader more than plain text, even if plain text would also work: any explanation of how something works or how parts relate (flow, request path, architecture, code or folder structure, state machine, lifecycle, history); any comparison, trade-off or decision with pros and cons; any diagnosis, review or investigation, especially with several causes or findings to rank; any answer with a table, a numbered or ranked list, steps, branches or several sections; or when the user says \"I don't get it / draw it / explain visually / 讲讲原理 / 没看懂 / 画个图\". When in doubt, use it: a page is quick and cheap to make. Also for explainer videos (\"make a video\", \"做个视频\") and for changing its settings. Skip only for small talk, a trivial one-line answer, or when the user asks for plain text."
+        }
+      ]
+    },
+    {
+      "repo": "xingkongliang/skills-manager",
+      "url": "https://github.com/xingkongliang/skills-manager",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 7289,
+      "skills": [
+        {
+          "name": "manage-skills",
+          "subpath": "skills/manage-skills",
+          "revision": "d30530c0ce473bc7c74fdb5952ebc08f2097eff2",
+          "presets": [
+            "coding"
+          ],
+          "description": "通过 skills-manager-cli 管理共享技能库：安装、更新、删除，按 agent 部署/取消部署，管理 preset 与标签，搜索和纳管已有技能。当你要给 Claude Code、Codex、Cursor 等 agent 增减技能，或整理中央库、查询已装/已部署内容时使用。优先于直接往 agent 目录里装，因为它保留来源信息、preset 归属、更新链路与跨 agent 部署状态。Keywords: skills manager, install skill, deploy, preset, 技能库管理"
+        }
+      ]
+    },
+    {
+      "repo": "alchaincyf/nuwa-skill",
+      "url": "https://github.com/alchaincyf/nuwa-skill",
+      "branch": "main",
+      "license": "MIT",
+      "stars": 37574,
+      "skills": [
+        {
+          "name": "huashu-nuwa",
+          "subpath": ".",
+          "revision": "",
+          "presets": [
+            "writing",
+            "人物角色"
+          ],
+          "description": "女娲造人：输入人名/主题/甚至只是模糊需求，自动深度调研→思维框架提炼→生成可运行的人物Skill。\n两种入口：(1)明确人名→直接蒸馏 (2)模糊需求→诊断推荐→再蒸馏。\n触发词：「造skill」「蒸馏XX」「女娲」「造人」「XX的思维方式」「做个XX视角」「更新XX的skill」。\n模糊需求也触发：「我想提升决策质量」「有没有一种思维方式能帮我...」「我需要一个思维顾问」。\nEnglish triggers: \"distill [person]\", \"nuwa\", \"create a [person] perspective skill\", \"how does [person] think\", \"I need a thinking advisor\".\n"
+        }
+      ]
+    }
+  ],
+  "local_only": [
+    {
+      "name": "apipost-test-report",
+      "group": "自建（9 个）",
+      "note": "Apipost 接口测试报告，按 docx 模板出结构化自测报告",
+      "path": "~/.skills-manager/skills/apipost-test-report"
+    },
+    {
+      "name": "cn-docx-finalize",
+      "group": "自建（9 个）",
+      "note": "docx 收口成中文正式公文风格（黑体标题 / 宋体正文 / 目录域）",
+      "path": "~/.skills-manager/skills/cn-docx-finalize"
+    },
+    {
+      "name": "code-simplifier",
+      "group": "自建（9 个）",
+      "note": "代码简化原则与重构指导",
+      "path": "~/.skills-manager/skills/code-simplifier"
+    },
+    {
+      "name": "deployment-plan-review",
+      "group": "自建（9 个）",
+      "note": "生产变更 / 上线方案文档审核（表格 + 🔴🟡 严重度）",
+      "path": "~/.skills-manager/skills/deployment-plan-review"
+    },
+    {
+      "name": "drawio-annotate",
+      "group": "自建（9 个）",
+      "note": "在 drawio 导出 PNG 上做分类高亮标注，并回写 .drawio",
+      "path": "~/.skills-manager/skills/drawio-annotate"
+    },
+    {
+      "name": "jiajing-emperor-perspective",
+      "group": "自建（9 个）",
+      "note": "嘉靖皇帝视角思考框架",
+      "path": "~/.skills-manager/skills/jiajing-emperor-perspective"
+    },
+    {
+      "name": "pozhenzil-perspective",
+      "group": "自建（9 个）",
+      "note": "破阵子视角思考框架",
+      "path": "~/.skills-manager/skills/pozhenzil-perspective"
+    },
+    {
+      "name": "tech-proposal-generator",
+      "group": "自建（9 个）",
+      "note": "技术方案生成，对齐既定模板格式",
+      "path": "~/.skills-manager/skills/tech-proposal-generator"
+    },
+    {
+      "name": "tech-proposal-review",
+      "group": "自建（9 个）",
+      "note": "技术方案评审",
+      "path": "~/.skills-manager/skills/tech-proposal-review"
+    },
+    {
+      "name": "markitdown-skill",
+      "group": "技能市场安装（2 个）",
+      "note": "市场包，底层是微软 markitdown CLI；上游 github.com/microsoft/markitdown 是工具本体，不是技能包",
+      "path": "~/.skills-manager/skills/markitdown-skill"
+    },
+    {
+      "name": "weekly-report",
+      "group": "技能市场安装（2 个）",
+      "note": "市场包，无公开仓库",
+      "path": "~/.skills-manager/skills/weekly-report"
+    },
+    {
+      "name": "superpowers",
+      "group": "平台发布版（3 个）",
+      "note": "OpenClaw 平台发布版（ownerId/slug 元数据），内容与 obra/superpowers 重叠",
+      "path": "~/.skills-manager/skills/superpowers"
+    },
+    {
+      "name": "superpowers-overview",
+      "group": "平台发布版（3 个）",
+      "note": "同上，超能力套件的入口导航",
+      "path": "~/.skills-manager/skills/superpowers-overview"
+    },
+    {
+      "name": "superpowers-verification",
+      "group": "平台发布版（3 个）",
+      "note": "同上，完成声明前的验证要求",
+      "path": "~/.skills-manager/skills/superpowers-verification"
+    }
+  ],
+  "presets": {
+    "diagram": [
+      "drawio-annotate"
+    ],
+    "docs": [
+      "apipost-test-report",
+      "cn-docx-finalize",
+      "deployment-plan-review",
+      "drawio-annotate",
+      "executing-plans",
+      "markitdown-skill",
+      "minimax-docx",
+      "tech-proposal-generator",
+      "tech-proposal-review"
+    ],
+    "writing": [
+      "huashu-nuwa",
+      "jiajing-emperor-perspective",
+      "pozhenzil-perspective",
+      "weekly-report"
+    ],
+    "人物角色": [
+      "answer-me-with-html",
+      "apipost-test-report",
+      "deployment-plan-review",
+      "huashu-nuwa",
+      "jiajing-emperor-perspective",
+      "tech-proposal-generator",
+      "tech-proposal-review",
+      "weekly-report"
+    ],
+    "coding": [
+      "brainstorming",
+      "code-simplifier",
+      "dispatching-parallel-agents",
+      "executing-plans",
+      "finishing-a-development-branch",
+      "frontend-design",
+      "grill-me",
+      "manage-skills",
+      "playwright-best-practices",
+      "ponytail",
+      "ponytail-audit",
+      "ponytail-debt",
+      "ponytail-gain",
+      "ponytail-help",
+      "ponytail-review",
+      "receiving-code-review",
+      "requesting-code-review",
+      "skill-creator",
+      "subagent-driven-development",
+      "superpowers",
+      "superpowers-overview",
+      "superpowers-verification",
+      "systematic-debugging",
+      "test-driven-development",
+      "using-git-worktrees",
+      "using-superpowers",
+      "verification-before-completion",
+      "writing-plans",
+      "writing-skills"
+    ]
+  }
+}
